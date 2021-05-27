@@ -151,7 +151,7 @@ namespace GCalendarToTimesheet
                     summary.IndexOf("cancelled", StringComparison.Ordinal) >= 0)
                     continue;
 
-                var clientName = summary.Split(' ', ':', '-', '.').FirstOrDefault(s => ExistingClients.Contains(s));
+                var clientName = summary.Split(' ', ':', '-', '.', '<', '>', ',').FirstOrDefault(s => ExistingClients.Contains(s));
                 if (clientName == null)
                 {
                     var emailComponents = eventItem.Organizer.Email.Split('.', '@');
