@@ -92,6 +92,11 @@ namespace GCalendarToTimesheet
                     case "-compress":
                         this.CompressDailyMultipleTasks = true;
                         break;
+                    
+                    case "-help":
+                        Console.WriteLine("GCalendarToTimesheet [-start date] [-end date] [-verbose] [-clients <list>] [-nosheet] [-compress] [-help]");
+                        Environment.Exit(0);
+                        break;
                 }
             }
         }
