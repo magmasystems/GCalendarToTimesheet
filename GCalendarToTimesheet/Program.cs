@@ -197,6 +197,12 @@ namespace GCalendarToTimesheet
 
         private void DumpTimesheetEvents(Dictionary<string, List<GCalEventInfo>> clientMap)
         {
+            if (clientMap == null)
+            {
+                Console.WriteLine("It looks like there are no events in your calendar for the given date range.");
+                return;
+            }
+
             foreach (var (key, value) in clientMap)
             {
                 if (value.Count == 0) // No events for this client?
